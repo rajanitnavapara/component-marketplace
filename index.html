@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI Component Marketplace</title>
+<meta name="description" content="Preview HTML, CSS and JS components and copy the code into your project.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="/">&lt;/&gt; CompoHub</a>
+    <input id="search" type="search" placeholder="Search components..." aria-label="Search components">
+    <button id="theme" class="ghost" aria-label="Toggle theme">🌓</button>
+  </div>
+</header>
+<section class="hero wrap">
+  <h1>Copy-paste UI components</h1>
+  <p>Pure HTML, CSS &amp; JS. Preview live, copy the code, ship it.</p>
+  <div id="cats" class="cats"></div>
+</section>
+<main class="wrap">
+  <div id="grid" class="grid"></div>
+  <p id="empty" class="empty" hidden>No components found.</p>
+</main>
+
+<div id="modal" class="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true">
+    <div class="sheet-head">
+      <div><h2 id="m-title"></h2><p id="m-desc"></p></div>
+      <button id="close" class="ghost" aria-label="Close">✕</button>
+    </div>
+    <div class="bar">
+      <div class="tabs" id="tabs">
+        <button data-tab="preview" class="on">Preview</button>
+        <button data-tab="html">HTML</button>
+        <button data-tab="css">CSS</button>
+        <button data-tab="js">JS</button>
+        <button data-tab="all">Full file</button>
+      </div>
+      <div class="sizes" id="sizes">
+        <button data-w="375">📱</button><button data-w="768">💻</button><button data-w="100%" class="on">🖥</button>
+      </div>
+    </div>
+    <div class="body">
+      <div id="pv" class="pv"><iframe id="frame" title="Preview" sandbox="allow-scripts"></iframe></div>
+      <div id="code" class="code" hidden>
+        <button id="copy" class="primary">Copy</button>
+        <pre><code id="code-text"></code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast">Copied!</div>
+<script src="components.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
