@@ -12,13 +12,14 @@
   <div class="wrap top-in">
     <a class="logo" href="/">&lt;/&gt; CompoHub</a>
     <input id="search" type="search" placeholder="Search components..." aria-label="Search components">
-    <button id="theme" class="ghost" aria-label="Toggle theme">🌓</button>
+    <a class="submit" href="https://github.com/rajanitnavapara/component-marketplace" target="_blank" rel="noopener">Submit</a>
+    <button id="theme" class="ghost" aria-label="Toggle dark mode" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
   </div>
 </header>
 <section class="hero wrap">
   <h1>Copy-paste UI components</h1>
   <p>Pure HTML, CSS &amp; JS. Preview live, copy the code, ship it.</p>
-  <div id="cats" class="cats"></div>
+  <div id="cats" class="cats" role="group" aria-label="Filter by category"></div>
 </section>
 <main class="wrap">
   <div id="grid" class="grid"></div>
@@ -26,21 +27,21 @@
 </main>
 
 <div id="modal" class="modal" hidden>
-  <div class="sheet" role="dialog" aria-modal="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="m-title">
     <div class="sheet-head">
       <div><h2 id="m-title"></h2><p id="m-desc"></p></div>
       <button id="close" class="ghost" aria-label="Close">✕</button>
     </div>
     <div class="bar">
-      <div class="tabs" id="tabs">
+      <div class="tabs" id="tabs" role="group" aria-label="View">
         <button data-tab="preview" class="on">Preview</button>
         <button data-tab="html">HTML</button>
         <button data-tab="css">CSS</button>
         <button data-tab="js">JS</button>
         <button data-tab="all">Full file</button>
       </div>
-      <div class="sizes" id="sizes">
-        <button data-w="375">📱</button><button data-w="768">💻</button><button data-w="100%" class="on">🖥</button>
+      <div class="sizes" id="sizes" role="group" aria-label="Preview size">
+        <button data-w="375" aria-label="Mobile width">Mobile</button><button data-w="768" aria-label="Tablet width">Tablet</button><button data-w="100%" class="on" aria-label="Full width">Desktop</button>
       </div>
     </div>
     <div class="body">
@@ -52,7 +53,7 @@
     </div>
   </div>
 </div>
-<div id="toast" class="toast">Copied!</div>
+<div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
 <script src="components.js"></script>
 <script src="app.js"></script>
 </body>
